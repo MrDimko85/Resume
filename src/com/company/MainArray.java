@@ -22,7 +22,9 @@ public class MainArray {
         System.out.println("Size " + arrayStorage.size());
 
         printAll();
-        arrayStorage.delete("uuid1");
+        arrayStorage.delete(r1.getUuid());
+        printAll();
+        arrayStorage.update(r3);
         printAll();
         arrayStorage.clear();
         printAll();
