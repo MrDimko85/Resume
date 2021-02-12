@@ -1,0 +1,6 @@
+.idea
+out
+log
+lib
+*.iml
+/src/com/company/MainArray.java
