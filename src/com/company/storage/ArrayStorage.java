@@ -5,7 +5,8 @@ import com.company.model.Resume;
 import java.util.Arrays;
 
 public class ArrayStorage {
-    private Resume[] storage = new Resume[10000];
+    private static final int STORAGE_LIMIT = 10000;
+    private Resume[] storage = new Resume[STORAGE_LIMIT];
     private int size = 0;
 
     public void clear (){
@@ -18,7 +19,7 @@ public class ArrayStorage {
         if(index != -1) {
             System.out.println("Resume" + r.getUuid() + "already exist");
         }
-        else if (size == storage.length) {
+        else if (size == STORAGE_LIMIT) {
             System.out.println("Storage overflow");
         }
         else {
