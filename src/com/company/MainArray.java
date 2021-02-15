@@ -4,7 +4,7 @@ import com.company.model.Resume;
 import com.company.storage.ArrayStorage;
 
 public class MainArray {
-    static ArrayStorage arrayStorage = new ArrayStorage();
+    private final static ArrayStorage ARRAY_STORAGE = new ArrayStorage();
 
     public static void main(String[] args) {
         Resume r1 = new Resume();
@@ -14,28 +14,28 @@ public class MainArray {
         Resume r3 = new Resume();
         r3.setUuid("uuid3");
 
-        arrayStorage.save(r1);
-        arrayStorage.save(r2);
-        arrayStorage.save(r3);
+        ARRAY_STORAGE.save(r1);
+        ARRAY_STORAGE.save(r2);
+        ARRAY_STORAGE.save(r3);
 
-        System.out.println("Get r1 " + arrayStorage.get("uuid1"));
-        System.out.println("Size " + arrayStorage.size());
+        System.out.println("Get r1 " + ARRAY_STORAGE.get("uuid1"));
+        System.out.println("Size " + ARRAY_STORAGE.size());
 
         printAll();
-        arrayStorage.delete(r1.getUuid());
+        ARRAY_STORAGE.delete(r1.getUuid());
         printAll();
-        arrayStorage.update(r3);
+        ARRAY_STORAGE.update(r3);
         printAll();
-        arrayStorage.clear();
+        ARRAY_STORAGE.clear();
         printAll();
 
-        System.out.println("Size " + arrayStorage.size());
+        System.out.println("Size " + ARRAY_STORAGE.size());
 
     }
 
     static void printAll() {
         System.out.println("\nGet All");
-        for (Resume r: arrayStorage.getAll()) {
+        for (Resume r: ARRAY_STORAGE.getAll()) {
             System.out.println(r);
         }
     }
