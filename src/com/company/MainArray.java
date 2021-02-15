@@ -2,9 +2,10 @@ package com.company;
 
 import com.company.model.Resume;
 import com.company.storage.ArrayStorage;
+import com.company.storage.Storage;
 
 public class MainArray {
-    private final static ArrayStorage ARRAY_STORAGE = new ArrayStorage();
+    private final static Storage ARRAY_STORAGE = new ArrayStorage();
 
     public static void main(String[] args) {
         Resume r1 = new Resume();
